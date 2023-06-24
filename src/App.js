@@ -1,11 +1,12 @@
 import { Fragment } from 'react';
 import { createBrowserRouter, createRoutesFromElements, RouterProvider, Route } from 'react-router-dom';
-import { createTheme, ThemeProvider, responsiveFontSizes } from '@mui/material';
+import { createTheme, ThemeProvider, responsiveFontSizes, Box } from '@mui/material';
 
 
 
 // import pages
-import LandingPage from './pages/LandingPage'
+import LandingPage from './pages/LandingPage';
+import Banner from './components/layout/LandingPage/Banner';
 
 
 
@@ -46,13 +47,13 @@ let theme = createTheme({
   },
 });
 
-// const styles = {
-//   container: {
-//     width: { xs: "90%", sm: "80%" },
-//     maxWidth: "1300px",
-//     margin: "2.5rem auto",
-//   },
-// };
+const styles = {
+  container: {
+    width: { xs: "90%", sm: "80%" },
+    maxWidth: "1300px",
+    margin: "2.5rem auto",
+  },
+};
 
 theme = responsiveFontSizes(theme);
 
@@ -71,9 +72,10 @@ function App() {
     <main>
       <ThemeProvider theme={theme}>
         <Fragment>
-          {/* <Box sx={styles.container}> */}
-          <RouterProvider router={router} />
-          {/* </Box> */}
+          <Banner />
+          <Box sx={styles.container}>
+            <RouterProvider router={router} />
+          </Box>
         </Fragment>
 
       </ThemeProvider>

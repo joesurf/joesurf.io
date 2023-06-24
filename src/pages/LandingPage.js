@@ -1,10 +1,10 @@
 import React, { Fragment } from 'react'
-import Banner from '../components/layout/LandingPage/Banner';
+import Reflections from '../components/layout/LandingPage/Reflections';
 
 function LandingPage() {
   return (
     <Fragment>
-      <Banner />
+      <Reflections />
     </Fragment>
   )
 }
